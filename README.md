@@ -11,7 +11,7 @@
 **End-to-end computer vision projects using transformer architectures — from object detection to model compression.**
 
 [**🖥️ Live Interactive Demo →**](https://huggingface.co/spaces/PRaruj/vision-transformer-projects) &nbsp;|&nbsp;
-[**📄 My Portfolio →**](https://www.prarujthapa.com.np/articles/) &nbsp;|&nbsp;
+[**📄 My Portfolio →**](https://www.prarujthapa.com.np) &nbsp;|&nbsp;
 [**🔗 GitHub →**](https://github.com/PRaruj)
 
 </div>
