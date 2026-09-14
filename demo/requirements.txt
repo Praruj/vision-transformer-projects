@@ -1,0 +1,8 @@
+﻿# Demo-only requirements (lighter install for HuggingFace Spaces)
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.40.0
+huggingface_hub>=0.22.0
+Pillow>=10.0.0
+numpy>=1.24.0
+gradio>=4.26.0
