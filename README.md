@@ -1,22 +1,9 @@
 # 🔭 Vision Transformer Projects
-
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/🤗_HuggingFace-Transformers-FFD21E)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Demo](https://img.shields.io/badge/🚀_Live_Demo-HF_Spaces-blue)
-
 **End-to-end computer vision projects using transformer architectures — from object detection to model compression.**
 
 [**🖥️ Live Interactive Demo →**](https://huggingface.co/spaces/PRaruj/vision-transformer-projects) &nbsp;|&nbsp;
 [**📄 My Portfolio →**](https://www.prarujthapa.com.np) &nbsp;|&nbsp;
 [**🔗 GitHub →**](https://github.com/PRaruj)
-
-</div>
-
----
 
 ## 📌 Projects at a Glance
 
@@ -26,8 +13,6 @@
 | 2 | [🐾 ViT + Knowledge Distillation](#-project-2--vit--knowledge-distillation-oxford-pets) | Model Compression | Teacher-Student KD | **Accuracy: `11.6%` → `37.6%`** |
 
 > Both projects share a **unified live demo** — upload your own image and run inference in the browser, no installation required.
-
----
 
 ## 🦺 Project 1 — DETR Hardhat Object Detection
 
@@ -43,7 +28,6 @@ The model was fine-tuned over 1,000 steps, demonstrating stable convergence usin
 *   **Total FLOPs:** `3.81e+18`
 
 ### Architecture
-
 ```text
 INPUT IMAGE
     │
@@ -84,32 +68,29 @@ INPUT IMAGE
 ```
 
 ### Why DETR Over Traditional Detectors?
-
 | Feature | Anchor-Based (YOLO, Faster R-CNN) | DETR |
 |---|---|---|
 | Anchors | ✅ Required | ❌ Anchor-free |
 | NMS Post-processing | ✅ Required | ❌ Not needed |
 | Global Context | ❌ Local receptive field | ✅ Full self-attention |
-| Predictions | Ordered, overlapping | **Set** — unique, permutation-invariant |
+| Predictions | Ordered, overlapping | Set — unique, permutation-invariant |
 
-### 📓 [View Full Notebook →](01_detr_hardhat_detection/Fine_tuning_vit_object_detection_detr_hardhat.ipynb)
-
----
+📓 View Full Notebook →
 
 ## 🐾 Project 2 — ViT + Knowledge Distillation (Oxford Pets)
 
 ### Overview
-Two-phase experiment on the [Oxford-IIIT Pet Dataset](https://www.robots.ox.ac.uk/~vgg/data/pets/) (7,390 images, 37 breeds) to demonstrate **model compression without increasing parameter count**.
+Two-phase experiment on the Oxford-IIIT Pet Dataset (7,390 images, 37 breeds) to demonstrate model compression without increasing parameter count.
 
 ### 📈 The Results (The Power of KD)
 Training a fresh ViT model from scratch on 37 complex classes is difficult. By using a large, pre-trained teacher model to provide "soft labels," we dramatically accelerated learning.
 
 *   **Baseline Accuracy (10 epochs):** `11.6%`
-*   **Distilled Student Accuracy (10 epochs):** **`37.6%`**
-*   *Note: Random guessing yields ~2.7%. The distilled model achieved more than triple the accuracy in the exact same timeframe.*
+*   **Distilled Student Accuracy (10 epochs):** `37.6%`
+
+*Note: Random guessing yields ~2.7%. The distilled model achieved more than triple the accuracy in the exact same timeframe.*
 
 ### What is Knowledge Distillation?
-
 ```text
 TEACHER MODEL (large, pretrained, frozen)
     │
@@ -131,25 +112,20 @@ Result: Student learns richer inter-class relationships from soft labels
         → Better generalization than training on hard labels alone
 ```
 
-### 📓 [View Full Notebook →](02_vit_knowledge_distillation/03_10_knowledge_distillation_exercise.ipynb)
-
----
+📓 View Full Notebook →
 
 ## 🖥️ Live Demo
 
-[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-md.svg)](https://huggingface.co/spaces/PRaruj/vision-transformer-projects)
-
 **Tab 1 — 🦺 DETR Hardhat Detector**
-- Upload any workplace/construction image
-- Model draws bounding boxes around hardhats with confidence scores
+*   Upload any workplace/construction image
+*   Model draws bounding boxes around hardhats with confidence scores
 
 **Tab 2 — 🐾 ViT KD Comparison (Oxford Pets)**
-- Upload any pet image
-- See Top-5 predictions from **both** models side-by-side
-- Observe how KD model produces more calibrated probability distributions
+*   Upload any pet image
+*   See Top-5 predictions from both models side-by-side
+*   Observe how KD model produces more calibrated probability distributions
 
-### Run Locally
-
+## Run Locally
 ```bash
 git clone https://github.com/PRaruj/vision-transformer-projects
 cd vision-transformer-projects
@@ -158,10 +134,7 @@ python demo/app.py
 # Open http://localhost:7860
 ```
 
----
-
 ## 🛠️ Tech Stack
-
 ```python
 stack = {
     "Models":      ["DETR", "ResNet-50", "ViT (from scratch)", "ViT (KD-compressed)"],
@@ -172,19 +145,16 @@ stack = {
 }
 ```
 
----
-
 ## 📁 Repository Structure
-
 ```text
 vision-transformer-projects/
 ├── README.md                                        ← You are here
 ├── 01_detr_hardhat_detection/
 │   ├── README.md                                    ← Deep-dive: DETR architecture & training
-│   └── Fine_tuning_vit_object_detection_detr_hardhat.ipynb ← Full training notebook
+│   └── train_detr_hardhat_detection.ipynb           ← Full training notebook
 ├── 02_vit_knowledge_distillation/
 │   ├── README.md                                    ← Deep-dive: KD theory & results
-│   └── 03_10_knowledge_distillation_exercise.ipynb
+│   └── train_vit_knowledge_distillation.ipynb       ← Full training notebook
 ├── demo/
 │   ├── app.py                                       ← Combined Gradio demo (2 tabs)
 │   └── requirements.txt
@@ -194,39 +164,28 @@ vision-transformer-projects/
 └── .gitignore
 ```
 
----
-
 ## 🧠 Skills Demonstrated
-
 | Skill | Evidence in This Repo |
-|-------|----------------------|
-| **Transformer Architecture** | DETR encoder-decoder + ViT patch embeddings from scratch |
-| **Object Detection** | Bipartite matching, Hungarian algorithm, permutation-invariant set prediction |
-| **Vision Transformers** | Manual patch splitting, CLS token, positional encoding, MHA blocks |
-| **Knowledge Distillation** | Temperature scaling, KL divergence loss, teacher-student curriculum |
-| **Model Compression** | Same model size, better generalization via soft label supervision |
-| **HuggingFace Ecosystem** | Transformers, Datasets, Hub model upload, Spaces deployment |
-| **Production Demo** | Gradio UI with multi-tab layout, deployable to HF Spaces |
-
----
-
-<details>
-<summary>🇯🇵 日本語でサクッと読む（クリックして展開 / Click to view Japanese summary）</summary>
+|---|---|
+| Transformer Architecture | DETR encoder-decoder + ViT patch embeddings from scratch |
+| Object Detection | Bipartite matching, Hungarian algorithm, permutation-invariant set prediction |
+| Vision Transformers | Manual patch splitting, CLS token, positional encoding, MHA blocks |
+| Knowledge Distillation | Temperature scaling, KL divergence loss, teacher-student curriculum |
+| Model Compression | Same model size, better generalization via soft label supervision |
+| HuggingFace Ecosystem | Transformers, Datasets, Hub model upload, Spaces deployment |
+| Production Demo | Gradio UI with multi-tab layout, deployable to HF Spaces |
 
 ## 日本語概要
-
 このリポジトリは、2つのコンピュータビジョン × トランスフォーマーアーキテクチャのプロジェクトをまとめたポートフォリオショーケースです。
 
-### プロジェクト1：DETR ヘルメット検出
-- DETR（Detection Transformer）をResNet-50バックボーンと組み合わせ、作業現場画像からヘルメットを検出するモデルをファインチューニング。
-- **成果**: ハンガリーアルゴリズムを用いた二部マッチングにより、最終学習Loss `1.35` を達成。
-- スループット: `3.96` samples/second
+**プロジェクト1：DETR ヘルメット検出**
+DETR（Detection Transformer）をResNet-50バックボーンと組み合わせ、作業現場画像からヘルメットを検出するモデルをファインチューニング。
+*   **成果:** ハンガリーアルゴリズムを用いた二部マッチングにより、最終学習Loss `1.35` を達成。
+*   **スループット:** `3.96` samples/second
 
-### プロジェクト2：ViT × 知識蒸留（Oxford Pets）
-- 大型の事前学習済みViTを教師モデルとし、知識蒸留でスチューデントモデルを改善。
-- **成果**: スクラッチ学習の精度（`11.6%`）を、同一エポック数で **`37.6%`** まで大幅に向上。
+**プロジェクト2：ViT × 知識蒸留（Oxford Pets）**
+大型の事前学習済みViTを教師モデルとし、知識蒸留でスチューデントモデルを改善。
+*   **成果:** スクラッチ学習の精度（`11.6%`）を、同一エポック数で `37.6%` まで大幅に向上。
 
-### デモ
+**デモ**
 Hugging Face Spaces上でブラウザからインタラクティブに推論が可能です。
-
-</details>
