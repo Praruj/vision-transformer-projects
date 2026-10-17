@@ -1,7 +1,6 @@
 # 🔭 Vision Transformer Projects
 **End-to-end computer vision projects using transformer architectures — from object detection to model compression.**
 
-[**🖥️ Gradio Demo (run locally) →**](#run-locally) &nbsp;|&nbsp;
 [**📄 My Portfolio →**](https://www.prarujthapa.com.np) &nbsp;|&nbsp;
 [**🔗 GitHub →**](https://github.com/Praruj)
 
@@ -11,8 +10,6 @@
 |---|---------|------|---------------|------------|
 | 1 | [🦺 DETR Hardhat Detection](#-project-1--detr-hardhat-object-detection) | Object Detection | Bipartite Matching | **Loss: `1.35`** |
 | 2 | [🐾 ViT + Knowledge Distillation](#-project-2--vit--knowledge-distillation-oxford-pets) | Model Compression | Teacher-Student KD | **Accuracy: `11.6%` → `37.6%`** |
-
-> Both projects share a **unified Gradio demo** — run it locally (see [Run Locally](#run-locally)), upload your own image and compare predictions in the browser.
 
 ## 🦺 Project 1 — DETR Hardhat Object Detection
 
@@ -114,17 +111,6 @@ Result: Student learns richer inter-class relationships from soft labels
 
 📓 View Full Notebook →
 
-## 🖥️ Demo
-
-**Tab 1 — 🦺 DETR Hardhat Detector**
-*   Upload any workplace/construction image
-*   Model draws bounding boxes around hardhats with confidence scores
-
-**Tab 2 — 🐾 ViT KD Comparison (Oxford Pets)**
-*   Upload any pet image
-*   See Top-5 predictions from both models side-by-side
-*   Observe how KD model produces more calibrated probability distributions
-
 ## Run Locally
 ```bash
 git clone https://github.com/Praruj/vision-transformer-projects
@@ -134,14 +120,15 @@ python demo/app.py
 # Open http://localhost:7860
 ```
 
+`demo/app.py` is a small two-tab inference app (DETR hardhat detector and ViT KD comparison). It can also be deployed to Hugging Face Spaces.
+
 ## 🛠️ Tech Stack
 ```python
 stack = {
     "Models":      ["DETR", "ResNet-50", "ViT (from scratch)", "ViT (KD-compressed)"],
     "Frameworks":  ["PyTorch", "HuggingFace Transformers", "HuggingFace Datasets"],
     "Concepts":    ["Object Detection", "Set Prediction", "Bipartite Matching",
-                    "Knowledge Distillation", "Vision Transformers", "Model Compression"],
-    "Demo":        ["Gradio", "HuggingFace Spaces"]
+                    "Knowledge Distillation", "Vision Transformers", "Model Compression"]
 }
 ```
 
@@ -156,7 +143,7 @@ vision-transformer-projects/
 │   ├── README.md                                    ← Deep-dive: KD theory & results
 │   └── train_vit_knowledge_distillation.ipynb       ← Full training notebook
 ├── demo/
-│   ├── app.py                                       ← Combined Gradio demo (2 tabs)
+│   ├── app.py                                       ← Inference demo (2 tabs)
 │   └── requirements.txt
 ├── scripts/
 │   └── upload_models_to_hf.py                       ← Upload model weights to HF Hub
@@ -172,8 +159,7 @@ vision-transformer-projects/
 | Vision Transformers | Manual patch splitting, CLS token, positional encoding, MHA blocks |
 | Knowledge Distillation | Temperature scaling, KL divergence loss, teacher-student curriculum |
 | Model Compression | Same model size, better generalization via soft label supervision |
-| HuggingFace Ecosystem | Transformers, Datasets, Hub model upload, Spaces deployment |
-| Production Demo | Gradio UI with multi-tab layout, deployable to HF Spaces |
+| HuggingFace Ecosystem | Transformers, Datasets, Hub model upload |
 
 ## 日本語概要
 このリポジトリは、2つのコンピュータビジョン × トランスフォーマーアーキテクチャのプロジェクトをまとめたポートフォリオショーケースです。
@@ -188,4 +174,4 @@ DETR（Detection Transformer）をResNet-50バックボーンと組み合わせ�
 *   **成果:** スクラッチ学習の精度（`11.6%`）を、同一エポック数で `37.6%` まで大幅に向上。
 
 **デモ**
-Hugging Face Spaces上でブラウザからインタラクティブに推論が可能です。
+`demo/app.py` でローカル実行できます（Hugging Face Spacesへのデプロイも可能）。
