@@ -1,9 +1,9 @@
 # 🔭 Vision Transformer Projects
 **End-to-end computer vision projects using transformer architectures — from object detection to model compression.**
 
-[**🖥️ Live Interactive Demo →**](https://huggingface.co/spaces/PRaruj/vision-transformer-projects) &nbsp;|&nbsp;
+[**🖥️ Gradio Demo (run locally) →**](#run-locally) &nbsp;|&nbsp;
 [**📄 My Portfolio →**](https://www.prarujthapa.com.np) &nbsp;|&nbsp;
-[**🔗 GitHub →**](https://github.com/PRaruj)
+[**🔗 GitHub →**](https://github.com/Praruj)
 
 ## 📌 Projects at a Glance
 
@@ -12,7 +12,7 @@
 | 1 | [🦺 DETR Hardhat Detection](#-project-1--detr-hardhat-object-detection) | Object Detection | Bipartite Matching | **Loss: `1.35`** |
 | 2 | [🐾 ViT + Knowledge Distillation](#-project-2--vit--knowledge-distillation-oxford-pets) | Model Compression | Teacher-Student KD | **Accuracy: `11.6%` → `37.6%`** |
 
-> Both projects share a **unified live demo** — upload your own image and run inference in the browser, no installation required.
+> Both projects share a **unified Gradio demo** — run it locally (see [Run Locally](#run-locally)), upload your own image and compare predictions in the browser.
 
 ## 🦺 Project 1 — DETR Hardhat Object Detection
 
@@ -114,7 +114,7 @@ Result: Student learns richer inter-class relationships from soft labels
 
 📓 View Full Notebook →
 
-## 🖥️ Live Demo
+## 🖥️ Demo
 
 **Tab 1 — 🦺 DETR Hardhat Detector**
 *   Upload any workplace/construction image
@@ -127,7 +127,7 @@ Result: Student learns richer inter-class relationships from soft labels
 
 ## Run Locally
 ```bash
-git clone https://github.com/PRaruj/vision-transformer-projects
+git clone https://github.com/Praruj/vision-transformer-projects
 cd vision-transformer-projects
 pip install -r requirements.txt
 python demo/app.py
